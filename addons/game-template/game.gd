@@ -60,9 +60,16 @@ func restart_scene_with_params(override_params):
 
 
 # Prevents all inputs while a graphic transition is playing.
-func _input(_event: InputEvent):
+func _input(event: InputEvent):
     if transitions and prevent_input_on_transitions and transitions.is_displayed():
         # prevent all input events
+        get_tree().set_input_as_handled()
+
+    if event.is_action_pressed("toggle_mouse_captured"):
+        if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+            Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+        elif Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+            Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
         get_tree().set_input_as_handled()
 
 
