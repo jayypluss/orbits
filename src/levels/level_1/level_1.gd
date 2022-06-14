@@ -19,6 +19,7 @@ func pre_start(params):
     print("Processing...")
     yield(get_tree().create_timer(2), "timeout")
     print("Done")
+    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 # `start()` is called when the graphic transition ends.
