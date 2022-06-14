@@ -56,6 +56,9 @@ shape = SubResource( 5 )
 [node name="InterpolatedCamera" parent="CameraRig" index="0"]
 far = 600.0
 
+[node name="SpringArm" parent="CameraRig" index="1"]
+collision_mask = 3
+
 [node name="Camera" parent="CameraRig/StateMachine" index="0"]
 is_y_inverted = true
 
