@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/gui/screens/global_gameplay/pause_screen/pause_screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/levels/level_1/level_1.gd" type="Script" id=2]
 [ext_resource path="res://src/levels/level_1/level_1_env.tres" type="Environment" id=3]
 [ext_resource path="res://src/player/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/enemy/enemy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CylinderShape" id=12]
 radius = 30.0
@@ -25,25 +26,6 @@ size = Vector3( 20, 0.2, 20 )
 
 [sub_resource type="SpatialMaterial" id=6]
 albedo_color = Color( 0.215686, 0.396078, 0.239216, 1 )
-
-[sub_resource type="CapsuleMesh" id=7]
-radius = 42.0
-mid_height = 52.0
-
-[sub_resource type="SpatialMaterial" id=11]
-albedo_color = Color( 0, 0.368627, 1, 1 )
-
-[sub_resource type="SphereMesh" id=9]
-radius = 5.0
-height = 10.0
-
-[sub_resource type="SpatialMaterial" id=10]
-flags_unshaded = true
-albedo_color = Color( 0.74902, 0, 0, 1 )
-
-[sub_resource type="CapsuleShape" id=8]
-radius = 42.0
-height = 52.0
 
 [node name="Level1" type="Spatial"]
 script = ExtResource( 2 )
@@ -80,27 +62,4 @@ environment = ExtResource( 3 )
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0920637, 3.17999, -2.45488 )
 
-[node name="Enemy" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.950505, -0.31071, 0, 0.31071, 0.950505, 0, 9.88006, -148.6 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="BodyMesh" type="MeshInstance" parent="Enemy"]
-transform = Transform( 1, 0, 0, 0, -2.98023e-08, -1, 0, 1, -2.98023e-08, 0, 0, 0 )
-mesh = SubResource( 7 )
-material/0 = SubResource( 11 )
-
-[node name="Eye1Mesh" type="MeshInstance" parent="Enemy"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 41.443, 36.5 )
-mesh = SubResource( 9 )
-material/0 = SubResource( 10 )
-
-[node name="Eye1Mesh2" type="MeshInstance" parent="Enemy"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 41.443, 36.5 )
-mesh = SubResource( 9 )
-material/0 = SubResource( 10 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Enemy"]
-transform = Transform( 1, 0, 0, 0, -2.98023e-08, -1, 0, 1, -2.98023e-08, 0, 0, 0 )
-shape = SubResource( 8 )
+[node name="Enemy" parent="." instance=ExtResource( 5 )]
