@@ -86,6 +86,10 @@ editor_only = true
 
 [node name="LastPositionTimer" type="Timer" parent="."]
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="timeout" from="LastPositionTimer" to="." method="_on_LastPositionTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="CameraRig"]
