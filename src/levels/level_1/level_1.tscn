@@ -38,6 +38,7 @@ radius = 5.0
 height = 10.0
 
 [sub_resource type="SpatialMaterial" id=10]
+flags_unshaded = true
 albedo_color = Color( 0.74902, 0, 0, 1 )
 
 [sub_resource type="CapsuleShape" id=8]
