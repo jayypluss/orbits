@@ -114,27 +114,26 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="MadeByLabel" type="Label" parent="Credits"]
-margin_right = 243.0
+margin_right = 150.0
 margin_bottom = 34.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "made by:"
 
 [node name="Developer1" type="Label" parent="Credits"]
 margin_top = 38.0
-margin_right = 243.0
+margin_right = 150.0
 margin_bottom = 72.0
 grow_horizontal = 0
 custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
-text = "Crystal Bit community"
+text = "telmotrooper"
 
 [node name="Developer2" type="Label" parent="Credits"]
-visible = false
-margin_top = 86.0
-margin_right = 157.0
-margin_bottom = 125.0
+margin_top = 76.0
+margin_right = 150.0
+margin_bottom = 110.0
 grow_horizontal = 0
 custom_colors/font_color = Color( 0.886275, 0.87451, 0.87451, 1 )
-text = "Developer 2"
+text = "jayypluss"
 
 [node name="Developer3" type="Label" parent="Credits"]
 visible = false
