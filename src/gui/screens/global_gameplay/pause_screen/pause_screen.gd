@@ -1,8 +1,7 @@
 extends CanvasLayer
 
-onready var pause := $Pause
-onready var pause_button := $PauseButton
-onready var resume_option := $Pause/VBoxOptions/Resume
+onready var pause := $Hidable
+onready var resume_option := $Hidable/VBoxOptions/Resume
 onready var label := $PressESCToOpenMenu
 
 
@@ -31,11 +30,13 @@ func _unhandled_input(event):
 
 
 func resume():
+    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
     get_tree().paused = false
     pause.hide()
 
 
 func pause_game():
+    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
     resume_option.grab_focus()
     get_tree().paused = true
     pause.show()
