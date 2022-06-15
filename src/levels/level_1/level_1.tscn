@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/gui/screens/global_gameplay/pause_screen/pause_screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/levels/level_1/level_1.gd" type="Script" id=2]
@@ -6,10 +6,11 @@
 [ext_resource path="res://src/player/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/enemy/enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/textures/noise_texture_1.jpg" type="Texture" id=6]
+[ext_resource path="res://src/orb/orb.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CylinderShape" id=12]
-radius = 30.0
 height = 0.5
+radius = 30.0
 
 [sub_resource type="CylinderMesh" id=13]
 top_radius = 30.0
@@ -131,6 +132,7 @@ material/0 = SubResource( 6 )
 
 [node name="HemisphericLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 127.668, -12.5896 )
+visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -155,3 +157,6 @@ shape = SubResource( 14 )
 [node name="MeshInstance" type="MeshInstance" parent="Orb"]
 mesh = SubResource( 15 )
 material/0 = SubResource( 17 )
+
+[node name="KinematicBody" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02969, 3.93146, -8.14577 )
